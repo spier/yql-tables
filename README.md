@@ -7,6 +7,7 @@ This is my personal fork of the original [YQL Community tables][yql_community]. 
 ## What is YQL? 
 
 From the [Yahoo's YQL website][yql]:
+
 > The Yahoo! Query Language is an expressive SQL-like language that lets you query, filter, and join data across Web services. With YQL, apps run faster with fewer lines of code and a smaller network footprint.
 
 ## Why do you have a personal fork?
@@ -19,14 +20,14 @@ As I said, YQL is great. As any piece of software it also has some flaws (as in 
 
 Therefore I am sometimes collecting some thoughts about YQL on [Twitter][seb_twitter]. See some examples below. I am happy to learn more about them or discuss with anybody who is interested in YQL.
 
-1. @yql #issues no. 1: How to keep a given API and the corresponding datatable in sync as API gets updated?
-1. @yql #issues no. 2: How to measure the "coverage" of a datatable, meaning how many calls of an API are implemented by the datatable? #in
-1. @yql #issues no. 3: How to introduce and maintain naming conventions for the naming of "keys" across different datatables?
-@yql #issues no. 4: Would be great to access usage stats for datatables that I did, to see how people use them. #optimization #motivation
-@yql #issues no. 5: How to search for existing community datatables? The console is fine but could be better.
-@yql #issues no. 6: Why can I not access/use values from a Sub-Select besides using the IN-syntax? Would allow for richer queries.
-@yql #issues no. 7: How to test datatables, e.g. to be notified when the underlying API changes or gets deprecated like
-@yql #issues no. 8: The error messages are just not clear :( Except this one of course "Yahoo! - 999 Unable to process request at this time"
+1. How to keep a given API and the corresponding datatable in sync as API gets updated?
+1. How to measure the "coverage" of a datatable, meaning how many calls of an API are implemented by the datatable? #in
+1. How to introduce and maintain naming conventions for the naming of "keys" across different datatables?
+1. Would be great to access usage stats for datatables that I did, to see how people use them. #optimization #motivation
+1. How to search for existing community datatables? The console is fine but could be better.
+1. Why can I not access/use values from a Sub-Select besides using the IN-syntax? Would allow for richer queries.
+1. How to test datatables, e.g. to be notified when the underlying API changes or gets deprecated like
+1. The error messages are just not clear :( Except this one of course "Yahoo! - 999 Unable to process request at this time"
 
 ## YQL Resources
 
