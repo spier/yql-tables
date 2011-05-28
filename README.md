@@ -44,11 +44,11 @@ Therefore I am sometimes collecting some thoughts about YQL on [Twitter][seb_twi
 
 
 [yql]: http://developer.yahoo.com/yql/
-[yql_open_data_tables_github]: http://www.datatables.org
-[yql_open_data_tables]: https://github.com/yql/yql-tables
+[yql_open_data_tables]: http://www.datatables.org
+[yql_open_data_tables_github]: https://github.com/yql/yql-tables
 [yql_blog]: http://www.yqlblog.net/blog
 [yql_forum]: http://developer.yahoo.net/forum/index.php?showforum=41
 [yql_documentation]: http://developer.yahoo.com/yql/guide/
-[yql_console]: http://developer.yahoo.com/yql/console/
+[yql_console]: http://developer.yahoo.com/yql/console/?q=show%20tables&env=store://datatables.org/alltableswithkeys
 [seb_twitter]: https://twitter.com/#!/sebastianspier
 
