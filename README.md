@@ -2,7 +2,7 @@
 
 ## Disclaimer
 
-This is my personal fork of the original [YQL Community tables][yql_community]. If you want to find the latest version of the YQL tables, please go to the original.  
+This is my personal fork of the original [YQL open data tables][yql_open_data_tables_github]. If you want to find the latest version of the YQL tables, please go to the original.  
 
 ## What is YQL? 
 
@@ -12,7 +12,7 @@ From the [Yahoo's YQL website][yql]:
 
 ## Why do you have a personal fork?
 
-I am a YQL enthusiast. I love the general idea and also the current implementation (for the most parts). The [YQL Community tables][yql_community] are great but also fairly slow when it comes to incorporating recent updates. Therefore I am using this repository as my personal playground when it comes to YQL. In pull the latest changes from the [YQL Community tables][yql_community] as I need them but at the same time I can always do random experiments here without being depended on the original repository.
+I am a YQL enthusiast. I love the general idea and also the current implementation (for the most parts). The [Open Data Tables][yql_open_data_tables] are great but sometimes a bit slow when it comes to incorporating recent updates. Therefore I am using this repository as my personal playground. I pull the latest changes from the [YQL Community tables][yql_open_data_tables_github] as I need them but at the same time I can always do random experiments here without being depended on the original repository.
 
 ## YQL issues
 
@@ -31,15 +31,24 @@ Therefore I am sometimes collecting some thoughts about YQL on [Twitter][seb_twi
 
 ## YQL Resources
 
-* [Yahoo's YQL website][yql]
-* [YQL Blog][yql_blog]
-* [YQL Community tables][yql_community]
-* [YQL Console][yql_console] - try out YQL commands yourself
+* General Information
+	* [Yahoo's YQL website][yql]
+	* [YQL Blog][yql_blog]
+	* [YQL Forum][yql_forum]
+* Hacking 
+	* [YQL Guide][yql_documentation] - Documentation
+	* YQL Open Data Tables [Website][yql_open_data_tables] and [github project][yql_open_data_tables_github]
+	* [YQL Console][yql_console] - try out YQL commands yourself
+
+
 
 
 [yql]: http://developer.yahoo.com/yql/
-[yql_community]: https://github.com/yql/yql-tables
-[yql_blog]: http://www.yqlblog.net/blog/
+[yql_open_data_tables_github]: http://www.datatables.org
+[yql_open_data_tables]: https://github.com/yql/yql-tables
+[yql_blog]: http://www.yqlblog.net/blog
+[yql_forum]: http://developer.yahoo.net/forum/index.php?showforum=41
+[yql_documentation]: http://developer.yahoo.com/yql/guide/
 [yql_console]: http://developer.yahoo.com/yql/console/
 [seb_twitter]: https://twitter.com/#!/sebastianspier
 
