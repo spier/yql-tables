@@ -19,9 +19,9 @@ As I said, YQL is great. As any piece of software it also has some flaws (as in 
 
 Therefore I am sometimes collecting some thoughts about YQL on [Twitter][seb_twitter]. See some examples below. I am happy to learn more about them or discuss with anybody who is interested in YQL.
 
-@yql #issues no. 1: How to keep a given API and the corresponding datatable in sync as API gets updated?
-@yql #issues no. 2: How to measure the "coverage" of a datatable, meaning how many calls of an API are implemented by the datatable? #in
-@yql #issues no. 3: How to introduce and maintain naming conventions for the naming of "keys" across different datatables?
+1. @yql #issues no. 1: How to keep a given API and the corresponding datatable in sync as API gets updated?
+1. @yql #issues no. 2: How to measure the "coverage" of a datatable, meaning how many calls of an API are implemented by the datatable? #in
+1. @yql #issues no. 3: How to introduce and maintain naming conventions for the naming of "keys" across different datatables?
 @yql #issues no. 4: Would be great to access usage stats for datatables that I did, to see how people use them. #optimization #motivation
 @yql #issues no. 5: How to search for existing community datatables? The console is fine but could be better.
 @yql #issues no. 6: Why can I not access/use values from a Sub-Select besides using the IN-syntax? Would allow for richer queries.
