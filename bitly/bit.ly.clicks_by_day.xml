@@ -8,7 +8,7 @@
 	    <sampleQuery>select * from {table} where login='yourlogingoeshere' and apiKey='yourkeygoeshere' and hash='a4MSUH';</sampleQuery>
     </meta>
     <bindings>
-        <select itemPath="json.json" produces="JSON">
+        <select itemPath="json" produces="JSON">
             <urls>
                 <url>http://api.bit.ly/v3/clicks_by_day</url>
             </urls>
