@@ -49,10 +49,8 @@
 				console_url = "http://developer.yahoo.com/yql/console/?q=" + escape(yql_query_str);
 				console.log(yql_query_str);
 				console.log(console_url);
-				window.open(console_url);
-				
-			}
-				
+				window.open(console_url);		
+			}	
 		</script>
 	</head>
   <body>
