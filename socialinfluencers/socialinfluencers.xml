@@ -20,12 +20,14 @@
 				// query APIs
 				klout_response = y.query('SELECT * FROM klout.user.show WHERE users=@username AND api_key=@api_key',{api_key:klout_api_key,username:username});
 				peerindex_response = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:peerindex_api_key,username:username});
+				y.log(klout_response);
+				y.log(peerindex_response);
 				
 				// construct respon
 				root = <root></root>;
 				root += <klout></klout>;
 				root += <peerindex></peerindex>;
-				root.klout += klout_response;
+				//root.klout += klout_response;
 				//root.klout.appendChild( klout_response.results );;
 				//root.peerindex += peerindex_response.results..*;			
 				y.log(root);
