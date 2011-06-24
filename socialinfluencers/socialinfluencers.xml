@@ -22,10 +22,10 @@
 				peerindex_response = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:peerindex_api_key,username:username});
 				
 				//y.log(klout_response);
-				//y.log(peerindex_response);
+				y.log(peerindex_response.results);
 				
 				// construct respon
-				root = <root></root>; //<klout></klout><peerindex></peerindex>
+				root = <root><klout></klout><peerindex></peerindex></root>;
 				root.klout = klout_response.results.users;
 				
 				//root.klout += klout_response;
