@@ -25,8 +25,8 @@
 				root = <root></root>;
 				root += <klout></klout>;
 				root += <peerindex></peerindex>;
-				//root.klout += klout_response.results..*;
-				root.klout.appendChild( klout_response.results );;
+				root.klout += klout_response;
+				//root.klout.appendChild( klout_response.results );;
 				//root.peerindex += peerindex_response.results..*;			
 				y.log(root);
 				
