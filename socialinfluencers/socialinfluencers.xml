@@ -24,19 +24,16 @@
 				//y.log(klout_response);
 				y.log(peerindex_response.results);
 				
-				// construct respon
-				root = <root><klout></klout><peerindex></peerindex></root>;
-				//root.klout += klout_response.results.users;
-				root.klout = <klout>{klout_response.results.users}</klout>
+				// construct respone
+				socialinfluencers = <socialinfluencers><klout></klout><peerindex></peerindex></socialinfluencers>;
+				socialinfluencers.klout = <klout>{klout_response.results.users}</klout>
+				socialinfluencers.peerindex = <peerindex>{peerindex_response.results.json}</peerindex>
 				
-				//root.klout += klout_response;
-				//root.klout.appendChild( klout_response.results );;
 				//root.peerindex += peerindex_response.results..*;			
-				//y.log(root);
 				
 				// return results
 				default xml namespace = '';
-				response.object = root;
+				response.object = socialinfluencers;
 	
       ]]></execute>
     </select>
