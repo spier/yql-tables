@@ -26,9 +26,7 @@
 				// construct respone
 				socialinfluencers = <socialinfluencers><klout></klout><peerindex></peerindex></socialinfluencers>;
 				socialinfluencers.klout = <klout>{klout_response.results.users}</klout>
-				socialinfluencers.peerindex = <peerindex>{peerindex_response.results.json..*}</peerindex>
-				
-				//root.peerindex += peerindex_response.results.*;			
+				socialinfluencers.peerindex = <peerindex>{peerindex_response.results.json.*}</peerindex>	
 				
 				// return results
 				default xml namespace = '';
