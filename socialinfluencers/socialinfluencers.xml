@@ -23,7 +23,7 @@
 				y.log(klout_response);
 				y.log(peerindex_response);
 				
-				y.log( xmlToJson(klout_response) );
+				y.log( y.xmlToJson(klout_response) );
 				
 				// construct respon
 				root = <root><klout></klout><peerindex></peerindex></root>;
