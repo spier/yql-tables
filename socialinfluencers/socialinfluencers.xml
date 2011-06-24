@@ -19,10 +19,12 @@
       <execute><![CDATA[
 	
 				klout_results = y.query('SELECT * FROM klout.user.show WHERE users=@username AND api_key=@api_key',{api_key:klout_api_key,username:username});
-				peerindex_results = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:klout_api_key,username:username});
+				peerindex_results = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:peerindex_api_key,username:username});
 	
 				y.log(klout_results);
 				y.log(peerindex_results);
+				
+				response.object = <root><klout>{klout_results}</klout><peerindex>{peerindex_results}</peerindex></root>;
 	
       ]]></execute>
     </select>
