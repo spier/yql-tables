@@ -28,7 +28,7 @@
 				socialinfluencers.klout = <klout>{klout_response.results.users}</klout>
 				socialinfluencers.peerindex = <peerindex>{peerindex_response.results.json..*}</peerindex>
 				
-				//root.peerindex += peerindex_response.results..*;			
+				//root.peerindex += peerindex_response.results.*;			
 				
 				// return results
 				default xml namespace = '';
