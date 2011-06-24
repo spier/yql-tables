@@ -26,7 +26,7 @@
 				
 				// construct respon
 				root = <root><klout></klout><peerindex></peerindex></root>;
-				root.klout = klout_response.results.users;
+				root.klout += klout_response.results.users;
 				
 				//root.klout += klout_response;
 				//root.klout.appendChild( klout_response.results );;
