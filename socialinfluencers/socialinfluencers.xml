@@ -23,11 +23,11 @@
 				//y.log(klout_response);
 				//y.log(peerindex);
 				
-				root = <root></root>;
-				root += <klout></klout>;
-				root += <peerindex></peerindex>;
-				root.klout += klout_response.results;
-				root.peerindex += peerindex_response.results;			
+				root = <root />;
+				root += <klout />;
+				root += <peerindex />;
+				//root.klout += klout_response.results;
+				//root.peerindex += peerindex_response.results;			
 				y.log(root);
 				
 				response.object = root;
