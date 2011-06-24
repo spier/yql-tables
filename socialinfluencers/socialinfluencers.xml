@@ -17,19 +17,20 @@
 					<key id="peerindex_api_key" type="xs:string" paramType="variable" required="true"/>
       </inputs>
       <execute><![CDATA[
-	
+				// query APIs
 				klout_response = y.query('SELECT * FROM klout.user.show WHERE users=@username AND api_key=@api_key',{api_key:klout_api_key,username:username});
 				peerindex_response = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:peerindex_api_key,username:username});
-				//y.log(klout_response);
-				//y.log(peerindex);
 				
-				root = <root />;
-				root += <klout />;
-				root += <peerindex />;
-				//root.klout += klout_response.results;
-				//root.peerindex += peerindex_response.results;			
+				// construct respon
+				root = <root></root>;
+				root += <klout></klout>;
+				root += <peerindex></peerindex>;
+				root.klout += klout_response.results..*;
+				root.peerindex += peerindex_response.results..*;			
 				y.log(root);
 				
+				// return results
+				default xml namespace = '';
 				response.object = root;
 	
       ]]></execute>
