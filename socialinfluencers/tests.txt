@@ -1,0 +1,6 @@
+SET api_key="qyz9ycudqwk9jnabqptnnu7n" ON klout;
+SET api_key="95e64d037730a47eea39cb7f9a08d976" ON peerindex;
+
+// SELECT * FROM klout.score WHERE users='davewiner';
+SELECT * FROM klout.user.show WHERE users='davewiner' 
+//SELECT * FROM peerindex.profile WHERE id='twitterUserGoesHere';
