@@ -20,19 +20,21 @@
 				// query APIs
 				klout_response = y.query('SELECT * FROM klout.user.show WHERE users=@username AND api_key=@api_key',{api_key:klout_api_key,username:username});
 				peerindex_response = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:peerindex_api_key,username:username});
-				y.log(klout_response);
-				y.log(peerindex_response);
 				
-				y.log( y.xmlToJson(klout_response) );
+				y.log(klout_response);
+				//y.log(peerindex_response);
+				
+				//y.log( y.xmlToJson(klout_response) );
 				
 				// construct respon
 				root = <root><klout></klout><peerindex></peerindex></root>;
-				root.node += <klout></klout>;
-				root.node += <peerindex></peerindex>;
+				root.kout = klout_response;
+				//root.node += <peerindex></peerindex>;
+				
 				//root.klout += klout_response;
 				//root.klout.appendChild( klout_response.results );;
 				//root.peerindex += peerindex_response.results..*;			
-				y.log(root);
+				//y.log(root);
 				
 				// return results
 				default xml namespace = '';
