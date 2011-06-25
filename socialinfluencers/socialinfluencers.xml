@@ -22,12 +22,13 @@
 				peerindex_response = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:peerindex_api_key,username:username});
 				topsy_response = y.query("SELECT * FROM topsy.authorinfo WHERE url=@username",{username:'http://twitter.com/' + username});
 				
-				y.log(topsy_response);
+				//y.log(topsy_response);
 				
 				// construct respone
 				socialinfluencers = <socialinfluencers><klout></klout><peerindex></peerindex></socialinfluencers>;
 				socialinfluencers.klout = <klout>{klout_response.results.users.*}</klout>
 				socialinfluencers.peerindex = <peerindex>{peerindex_response.results.json.*}</peerindex>	
+				socialinfluencers.topsy = <topsy>{topsy_response.results.response.*}</topsy>	
 				
 				// return results
 				default xml namespace = '';
