@@ -8,9 +8,6 @@
   </meta>
   <bindings>
     <select itemPath="" produces="JSON">
-      <urls>
-        <url></url>
-      </urls>
       <inputs>
 					<key id="username" type="xs:string" paramType="variable" required="true"/>
           <key id="klout_api_key" type="xs:string" paramType="variable" required="true"/>
@@ -22,8 +19,6 @@
 				peerindex_response = y.query('SELECT * FROM peerindex.profile WHERE id=@username AND api_key=@api_key',{api_key:peerindex_api_key,username:username});
 				topsy_response = y.query("SELECT * FROM topsy.authorinfo WHERE url=@username",{username:'http://twitter.com/' + username});
 				
-				//y.log(topsy_response);
-				
 				// construct respone
 				socialinfluencers = <socialinfluencers><klout></klout><peerindex></peerindex></socialinfluencers>;
 				socialinfluencers.klout = <klout>{klout_response.results.users.*}</klout>
@@ -32,8 +27,7 @@
 				
 				// return results
 				default xml namespace = '';
-				response.object = socialinfluencers;
-	
+				response.object = socialinfluencers;	
       ]]></execute>
     </select>
   </bindings>
