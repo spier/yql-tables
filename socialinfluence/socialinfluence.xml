@@ -7,7 +7,7 @@
       <sampleQuery></sampleQuery>
   </meta>
   <bindings>
-    <select itemPath="" produces="JSON">
+    <select itemPath="" produces="XML">
       <inputs>
 					<key id="username" type="xs:string" paramType="variable" required="true"/>
           <key id="klout_api_key" type="xs:string" paramType="variable" required="true"/>
