@@ -12,9 +12,10 @@ task :create_env_file do
   # write all .xml files to .env file
   xml_files = Dir.glob("**/*.xml")
   xml_files.each do |filename| 
-     absolute_url = File.join(base_path,filename)
-     use_statement = "USE \"#{absolute_url}\";"
-     env_fh.puts use_statement
+    table_name = File.basename(filename,".xml")
+    absolute_url = File.join(base_path,filename)
+    use_statement = "USE '#{absolute_url}' AS #{table_name};"
+    env_fh.puts use_statement
   end
   
   env_fh.close()
