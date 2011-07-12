@@ -7,7 +7,7 @@
 		<sampleQuery>SELECT * FROM {table} </sampleQuery>		
 	</meta>
 	<bindings>
-		<select itemPath="json" produces="JSON">
+		<select itemPath="response.view" produces="XML">
 			<urls>
 				<url env="all">https://opendata.socrata.com/api/views.json</url>
 			</urls>
@@ -17,10 +17,12 @@
 				<total default="10" />
 			</paging>
 			<inputs>
-				<!-- <key id="indicator_id" type="xs:string" paramType="path" required="true"/>
-				<key id="region_code" type="xs:string" paramType="path" required="true"/>
-				<key id="from_year" type="xs:string" paramType="path" default="1960" />
-				<key id="to_year" type="xs:string" paramType="path" default="2010" /> -->
+				<key id="category" type="xs:string" paramType="query" />
+				<key id="name" type="xs:string" paramType="query" />
+				<key id="description" type="xs:string" paramType="query" />
+				<key id="tags" type="xs:string" paramType="query" />
+				<key id="full" type="xs:string" paramType="query" />
+				<!-- <key id="count" type="xs:string" paramType="query" /> -->
 			</inputs>
     </select>
   </bindings>
