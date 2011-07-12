@@ -9,7 +9,7 @@
 	<bindings>
 		<select itemPath="response.view" produces="XML">
 			<urls>
-				<url env="all">https://finances.worldbank.org/api/views/{viewID}.xml</url>
+				<url env="all">https://finances.worldbank.org/api/views/{view_id}.xml</url>
 			</urls>
 			<paging model="page">
 				<start id="page" default="1" />
@@ -17,7 +17,10 @@
 				<total default="10" />
 			</paging>
 			<inputs>
-				<key id="viewID" type="xs:string" paramType="path" required="true" />
+				<key id="view_id" type="xs:string" paramType="path" required="true" />
+				
+				<!-- app_token is not required but recommended: http://dev.socrata.com/authentication -->
+				<key id="app_token" type="xs:string" paramType="path" />
 			</inputs>
     </select>
   </bindings>
