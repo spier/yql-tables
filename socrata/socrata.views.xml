@@ -3,11 +3,11 @@
 	<meta>
 		<author>Sebastian Spier</author>
 		<description>Socrata API</description>
-	   	<documentationURL>http://opendata.socrata.com/api/docs/views</documentationURL>
+	  <documentationURL>http://opendata.socrata.com/api/docs/views</documentationURL>
 		<sampleQuery>SELECT * FROM {table} </sampleQuery>		
 	</meta>
 	<bindings>
-		<select itemPath="json" produces="XML">
+		<select itemPath="json" produces="JSON">
 			<urls>
 				<url env="all">https://opendata.socrata.com/api/views.json</url>
 			</urls>
