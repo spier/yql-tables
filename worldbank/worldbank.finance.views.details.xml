@@ -20,7 +20,7 @@
 				<key id="view_id" type="xs:string" paramType="path" required="true" />
 				
 				<!-- app_token is not required but recommended: http://dev.socrata.com/authentication -->
-				<key id="app_token" type="xs:string" paramType="path" />
+				<key id="app_token" type="xs:string" paramType="query" />
 			</inputs>
     </select>
   </bindings>
