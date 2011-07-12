@@ -9,7 +9,7 @@ task :create_env_file do
   
   
   # both are hardcoded. find out the current branch from git
-  base_path = "http://raw.github.com/spier/yql-tables/raw/#{branch}/"
+  base_path = "https://raw.github.com/spier/yql-tables/#{branch}/"
   env_filename = "alltables_forked.env"
   env_fh = File.open(env_filename,"w")
   
