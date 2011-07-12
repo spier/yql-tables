@@ -4,8 +4,12 @@ require 'rake'
 
 desc "Create new .env file"
 task :create_env_file do
+  puts "Which branch?"
+  branch = STDIN.gets.chomp
+  
+  
   # both are hardcoded. find out the current branch from git
-  base_path = 'http://github.com/spier/yql-tables/raw/master/'
+  base_path = "http://raw.github.com/spier/yql-tables/raw/#{branch}/"
   env_filename = "alltables_forked.env"
   env_fh = File.open(env_filename,"w")
   
