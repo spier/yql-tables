@@ -4,11 +4,15 @@ require 'rake'
 
 desc "Create new .env file"
 task :create_env_file do
-  puts "Which branch?"
-  branch = STDIN.gets.chomp
+  # determine current branch from git
+  # see: http://stackoverflow.com/questions/1593051/how-to-programmatically-determine-the-current-checked-out-git-branch
+  branch = `git name-rev --name-only HEAD`
+  branch.strip!
+  # alternatively one could also ask for the branch name
+  # puts "Which branch?"
+  # branch = STDIN.gets.chomp
   
-  
-  # both are hardcoded. find out the current branch from git
+  # github user and repository name are hardcoded
   base_path = "https://raw.github.com/spier/yql-tables/#{branch}/"
   env_filename = "alltables_forked.env"
   env_fh = File.open(env_filename,"w")
