@@ -13,8 +13,7 @@
 			<urls>
 				<url env="all">http://opendata.socrata.com/api/docs.json</url>
 			</urls>
-			<inputs>
-			</inputs>
+			<inputs />
     </select>
 
 		<!-- query for only a single section of the docs -->
@@ -23,7 +22,7 @@
 				<url env="all">http://opendata.socrata.com/api/docs/{section}.json</url>
 			</urls>
 			<inputs>
-				<key id="section" type="xs:string" paramType="path" />
+				<key id="section" type="xs:string" paramType="path" required="true"/>
 			</inputs>
     </select>
 
