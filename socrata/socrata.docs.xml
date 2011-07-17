@@ -9,7 +9,7 @@
 	<bindings>
 		
 		<!-- general query. show all docs -->
-		<select itemPath="JSON" produces="JSON">
+		<select itemPath="json" produces="JSON">
 			<urls>
 				<url env="all">http://opendata.socrata.com/api/docs.json</url>
 			</urls>
@@ -18,7 +18,7 @@
     </select>
 
 		<!-- query for only a single section of the docs -->
-		<select itemPath="JSON" produces="JSON">
+		<select itemPath="json" produces="JSON">
 			<urls>
 				<url env="all">http://opendata.socrata.com/api/docs/{section}.json</url>
 			</urls>
