@@ -7,16 +7,11 @@
 		<sampleQuery>SELECT * FROM {table} WHERE view_id="ax5s-vav5"</sampleQuery>		
 	</meta>
 	<bindings>
-		<!-- <select itemPath="response.view" produces="XML"> -->
-		<select itemPath="json" produces="JSON">
+
+		<select itemPath="" produces="JSON">
 			<urls>
 				<url env="all">https://finances.worldbank.org/api/views/{view_id}.json</url>
 			</urls>
-			<paging model="page">
-				<start id="page" default="1" />
-				<pagesize id="limit" max="200" />
-				<total default="10" />
-			</paging>
 			<inputs>
 				<key id="view_id" type="xs:string" paramType="path" required="true" />
 				
@@ -24,5 +19,6 @@
 				<key id="app_token" type="xs:string" paramType="query" />
 			</inputs>
     </select>
+
   </bindings>
 </table>
