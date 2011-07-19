@@ -16,6 +16,8 @@
 			<inputs />
     </select>
 
+		<!-- TODO: this second definition is not picked up yet  -->
+
 		<!-- query for only a single section of the docs -->
 		<select itemPath="json" produces="JSON">
 			<urls>

@@ -7,9 +7,11 @@
 		<sampleQuery>SELECT * FROM {table} </sampleQuery>		
 	</meta>
 	<bindings>
-		<select itemPath="response.view" produces="XML">
+		
+		<!-- <select itemPath="response.view" produces="XML"> -->
+		<select itemPath="json" produces="JSON"> 
 			<urls>
-				<url env="all">https://finances.worldbank.org/api/views.xml</url>
+				<url env="all">https://finances.worldbank.org/api/views.json</url>
 			</urls>
 			<paging model="page">
 				<start id="page" default="1" />
@@ -25,5 +27,6 @@
 				<!-- <key id="count" type="xs:string" paramType="query" /> -->
 			</inputs>
     </select>
+
   </bindings>
 </table>
