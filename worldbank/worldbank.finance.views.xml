@@ -9,7 +9,7 @@
 	<bindings>
 		
 		<!-- <select itemPath="response.view" produces="XML"> -->
-		<select itemPath="json" produces="JSON"> 
+		<select itemPath="json.json" produces="JSON"> 
 			<urls>
 				<url env="all">https://finances.worldbank.org/api/views.json</url>
 			</urls>
