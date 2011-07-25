@@ -26,6 +26,9 @@ task :create_env_file do
   branch = `git name-rev --name-only HEAD`
   branch.strip!
   
+  # parameters to this rake tasks could also be provided from the outside:
+  # http://www.viget.com/extend/protip-passing-parameters-to-your-rake-tasks/
+  
   # alternatively one could also ask for the branch name
   # puts "Which branch?"
   # branch = STDIN.gets.chomp
