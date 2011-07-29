@@ -9,7 +9,7 @@
 	</meta>
 	<bindings>
 		
-		<select itemPath="" produces="XML">
+		<select itemPath="response.viewColumn" produces="XML">
 			<urls>
 				<url env="all">https://finances.worldbank.org/api/views/{view_id}/columns/{column_id}.xml</url>
 			</urls>
@@ -23,7 +23,7 @@
     </select>
 		
 		
-		<select itemPath="" produces="XML">
+		<select itemPath="viewColumn" produces="XML">
 			<urls>
 				<url env="all">https://finances.worldbank.org/api/views/{view_id}/columns.xml</url>
 			</urls>
