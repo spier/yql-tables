@@ -4,9 +4,21 @@
 		<author>Sebastian Spier</author>
 		<description>Socrata API</description>
 	  <documentationURL>http://opendata.socrata.com/api/docs/views</documentationURL>
-		<sampleQuery>SELECT * FROM {table} </sampleQuery>		
+		<sampleQuery>SELECT * FROM {table}</sampleQuery>		
 	</meta>
 	<bindings>
+		
+		<select itemPath="view" produces="XML">
+			<urls>
+				<url env="all">https://finances.worldbank.org/api/views/{view_id}.xml</url>
+			</urls>
+			<inputs>
+				<key id="view_id" type="xs:string" paramType="path" required="true" />
+				
+				<!-- app_token is not required but recommended: http://dev.socrata.com/authentication -->
+				<key id="app_token" type="xs:string" paramType="query" />
+			</inputs>
+    </select>
 		
 		<select itemPath="response.view" produces="XML">
 			<urls>
