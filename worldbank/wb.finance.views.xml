@@ -2,10 +2,10 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd" https="true">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>Socrata API</description>
+		<description>Socrata API for World Bank Finance data</description>
 	  <documentationURL>http://opendata.socrata.com/api/docs/views</documentationURL>
 		<sampleQuery description="first 10 views">SELECT * FROM {table}</sampleQuery>		
-		<sampleQuery description="first 20 views">>SELECT id, name FROM {table}(0,20)</sampleQuery>	
+		<sampleQuery description="first 20 views">SELECT id, name FROM {table}(0,20)</sampleQuery>	
 		<sampleQuery description="two specific views by ID">SELECT * FROM {table} WHERE view_id="ywh6-ej2m" OR view_id="daeh-46t7"</sampleQuery>	
 	</meta>
 	<bindings>
@@ -34,8 +34,8 @@
 				<total default="10" />
 			</paging>
 			<inputs>
-				<key id="category" type="xs:string" paramType="query" />
 				<key id="name" type="xs:string" paramType="query" />
+				<key id="category" type="xs:string" paramType="query" />	
 				<key id="description" type="xs:string" paramType="query" />
 				<key id="tags" type="xs:string" paramType="query" />
 				<key id="full" type="xs:string" paramType="query" />
