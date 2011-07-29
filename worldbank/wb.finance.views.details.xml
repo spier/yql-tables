@@ -8,7 +8,7 @@
 	</meta>
 	<bindings>
 
-		<select itemPath="" produces="XML">
+		<select itemPath="response.row.row" produces="XML">
 			<urls>
 				<url env="all">https://finances.worldbank.org/api/views/{view_id}.xml</url>
 			</urls>
