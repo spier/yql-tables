@@ -4,8 +4,8 @@
 		<author>Sebastian Spier</author>
 		<description>Socrata API for World Bank Finance data</description>
 	  <documentationURL>http://opendata.socrata.com/api/docs/views</documentationURL>
-		<sampleQuery description="All columns from one View">SELECT * FROM {table} WHERE view_id="sfv5-tf7p"</sampleQuery>
-		<sampleQuery description="A specific column from one View">SELECT * FROM {table} WHERE view_id="sfv5-tf7p" AND column_id="2730792"</sampleQuery>			
+		<sampleQuery>SELECT * FROM {table} WHERE view_id="sfv5-tf7p"</sampleQuery>
+		<sampleQuery>SELECT * FROM {table} WHERE view_id="sfv5-tf7p" AND column_id="2730792"</sampleQuery>			
 	</meta>
 	<bindings>
 		
