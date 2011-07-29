@@ -11,6 +11,7 @@
       </urls>
       <inputs>
         <key id="id" type="xs:string" paramType="path" required="true" />
+        <key id="key" as="key" type="xs:string" paramType="query" required="false" />
       </inputs>
       <execute><![CDATA[
         var atom = Namespace("http://www.w3.org/2005/Atom");
@@ -36,6 +37,8 @@
     			statistics.appendChild( <last_web_access>{xml.yt::statistics.@lastWebAccess.toString()}</last_web_access> );
     			statistics.appendChild( <subscribers>{xml.yt::statistics.@subscriberCount.toString()}</subscribers> );
     			statistics.appendChild( <views>{xml.yt::statistics.@viewCount.toString()}</views> );
+    			statistics.appendChild( <totalviews>{xml.yt::statistics.@totalUploadViews.toString()}</totalviews> );
+
           user.appendChild(statistics);
         
           results.appendChild(user);

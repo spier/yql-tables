@@ -4,6 +4,7 @@
     <author>Martin Borho</author>
     <documentationURL>http://code.google.com/apis/ajaxsearch/documentation/</documentationURL>
     <sampleQuery>select * from {table} where q = "new york"</sampleQuery>
+    <sampleQuery>select * from {table} where topic = "h"</sampleQuery>
   </meta>
   <bindings>
     <select itemPath="json.responseData.results" produces="JSON">
@@ -17,7 +18,14 @@
       </paging>
       <inputs>
         <key id='q' type='xs:string' paramType='query' />
+        <key id='topic' type='xs:string' paramType='query'/>
         <key id="ned" type="xs:string" paramType="query" required="false" default="us"/>
+        <key id="geo" type="xs:string" paramType="query" />
+        <key id="key" type="xs:string" paramType="query" />
+        <key id="rsz" type="xs:string" paramType="query" />
+        <key id="scoring" type="xs:string" paramType="query" />
+        <key id="start" type="xs:string" paramType="query" />
+        <key id="userip" type="xs:string" paramType="query" />
       </inputs>
     </select>
   </bindings>
