@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+    <meta>
+			<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+			<description>USA.gov URLs which created whenever anyone shortens a .gov or .mil URL using bitly</description>
+			<documentationURL>http://www.usa.gov/About/developer_resources/developers.shtml</documentationURL>
+	    <sampleQuery>SELECT * FROM {table}</sampleQuery>
+    </meta>
+    <bindings>
+        <select itemPath="json" produces="JSON" pollingFrequencySeconds="2">
+            <urls>
+                <url>http://developer.usa.gov/1usagov</url>
+            </urls>
+            <inputs />
+        </select>
+     </bindings>
+</table>
