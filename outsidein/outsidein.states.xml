@@ -21,6 +21,9 @@
 			</inputs>
 			<execute><![CDATA[
 				
+				// create my own window object
+				var window = {};
+
 				// MD5 hashing from crypto-js
 				y.include("http://crypto-js.googlecode.com/files/2.3.0-crypto-md5.js");
 		
