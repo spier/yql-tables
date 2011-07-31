@@ -26,7 +26,7 @@
 				y.log(hm);
 
 				var sig = y.crypto.encodeMd5(hm);
-				log(sig);
+				y.log(sig);
 				
 				// make request
 				response.object = request.query("dev_key",dev_key).query("sig",sig).get().response;
