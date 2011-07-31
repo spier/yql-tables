@@ -22,14 +22,14 @@
 			<execute><![CDATA[
 				
 				// load JS dependencies
-				y.include("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
-				y.include("http://easyclip.googlecode.com/svn-history/r2/trunk/jquery.md5.js");
+				//y.include("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
+				//y.include("http://easyclip.googlecode.com/svn-history/r2/trunk/jquery.md5.js");
 				
 				// create signature
 				var hm = dev_key + secret + (Math.round(new Date().getTime() / 1000).toString());
-				log(hm);
-				var sig = $.md5(hm);
-				log(sig);
+				//log(hm);
+				//var sig = $.md5(hm);
+				//log(sig);
 				
 				log("crypto test: " + y.crypto.encodeMd5(hm));
 				
