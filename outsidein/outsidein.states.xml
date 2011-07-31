@@ -7,10 +7,10 @@
 		<sampleQuery>SELECT * FROM {table} WHERE dev_key="a" AND secret="b" AND state="florida"</sampleQuery>
 	</meta>
 	<bindings>
-		<select itemPath="" produces="XML">
+		<select itemPath="json" produces="JSON">
 			<urls>
 				<!-- http://hyperlocal-api.outside.in/v1.1/states/{state abbreviation}/stories?dev_key={key}&sig={signature} -->
-				<url>http://hyperlocal-api.outside.in/v1.1/states/{state}</url>
+				<url>http://hyperlocal-api.outside.in/v1.1/states/{state}/stories</url>
 			</urls>
 			<inputs>
 				<key id="dev_key" type="xs:string" paramType="variable" required="true" />
@@ -20,6 +20,9 @@
 				<key id="state" type="xs:string" paramType="path" required="true"/>
 			</inputs>
 			<execute><![CDATA[
+				
+				// MD5 hashing from crypto-js
+				y.include("http://crypto-js.googlecode.com/files/2.3.0-crypto-md5.js");
 		
 				// create signature
 				var hm = dev_key + secret + (Math.round(new Date().getTime() / 1000).toString());
@@ -28,12 +31,11 @@
 				var sig = y.crypto.encodeMd5(hm);
 				y.log(sig);
 				
-				// make request
-				response.object = request.query("dev_key",dev_key).query("sig",sig).get().response;
+				var sig2 = Crypto.MD5(hm, {asString: true});
+				y.log(sig2);
 				
-				// the key 'item_id' needs to be added to the URL in the execute block because otherwise the / gets encoded in the URL and the API call fails
-				// see for details: http://stackoverflow.com/questions/4067374/preventing-yql-from-url-encoding-a-key
-				// response.object = request.path(item_id).get().response;
+				// make request
+				response.object = request.query("dev_key",dev_key).query("sig",sig2).get().response;
 
 				]]></execute>
 			</select>
