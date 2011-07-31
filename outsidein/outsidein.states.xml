@@ -27,11 +27,12 @@
 				
 				// create signature
 				var hm = dev_key + secret + (Math.round(new Date().getTime() / 1000).toString());
+				y.log(hm);
 				//log(hm);
 				//var sig = $.md5(hm);
 				//log(sig);
 				
-				log("crypto test: " + y.crypto.encodeMd5(hm));
+				y.log("crypto test: " + y.crypto.encodeMd5(hm));
 				
 				// the key 'item_id' needs to be added to the URL in the execute block because otherwise the / gets encoded in the URL and the API call fails
 				// see for details: http://stackoverflow.com/questions/4067374/preventing-yql-from-url-encoding-a-key
