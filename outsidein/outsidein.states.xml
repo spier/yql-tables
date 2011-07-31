@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+	<meta>
+		<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+		<description>Outside.in Hyperlocal News API</description>
+		<documentationURL>http://developers.outside.in/docs/read/stories_query_resource</documentationURL>
+		<sampleQuery>SELECT * FROM {table} WHERE dev_key="a" AND secret="b" AND state="florida"</sampleQuery>
+	</meta>
+	<bindings>
+		<select itemPath="" produces="XML">
+			<urls>
+				<!-- http://hyperlocal-api.outside.in/v1.1/states/{state abbreviation}/stories?dev_key={key}&sig={signature} -->
+				<url>http://hyperlocal-api.outside.in/v1.1/states/{state}</url>
+			</urls>
+			<inputs>
+				<key id="dev_key" type="xs:string" paramType="variable" required="true" />
+				<key id="secret" type="xs:string" paramType="variable" required="true" />
+				
+				<!-- either abbreviation or name of state -->
+				<key id="state" type="xs:string" paramType="path" required="true"/>
+			</inputs>
+			<execute><![CDATA[
+				
+				// load JS dependencies
+				include("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
+				include("http://easyclip.googlecode.com/svn-history/r2/trunk/jquery.md5.js");
+				
+				// create signature
+				var hm = dev_key + secret + (Math.round(new Date().getTime() / 1000).toString());
+				log(hm);
+				var sig = $.md5(hm);
+				log(sig);
+				
+				// the key 'item_id' needs to be added to the URL in the execute block because otherwise the / gets encoded in the URL and the API call fails
+				// see for details: http://stackoverflow.com/questions/4067374/preventing-yql-from-url-encoding-a-key
+				// response.object = request.path(item_id).get().response;
+				
+
+				]]></execute>
+			</select>
+		</bindings>
+	</table>
