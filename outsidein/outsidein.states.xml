@@ -20,24 +20,20 @@
 				<key id="state" type="xs:string" paramType="path" required="true"/>
 			</inputs>
 			<execute><![CDATA[
-				
-				// load JS dependencies
-				//y.include("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
-				//y.include("http://easyclip.googlecode.com/svn-history/r2/trunk/jquery.md5.js");
-				
+		
 				// create signature
 				var hm = dev_key + secret + (Math.round(new Date().getTime() / 1000).toString());
 				y.log(hm);
-				//log(hm);
-				//var sig = $.md5(hm);
-				//log(sig);
+
+				var sig = y.crypto.encodeMd5(hm);
+				log(sig);
 				
-				y.log("crypto test: " + y.crypto.encodeMd5(hm));
+				// make request
+				response.object = request.query("dev_key",dev_key).query("sig",sig).get().response;
 				
 				// the key 'item_id' needs to be added to the URL in the execute block because otherwise the / gets encoded in the URL and the API call fails
 				// see for details: http://stackoverflow.com/questions/4067374/preventing-yql-from-url-encoding-a-key
 				// response.object = request.path(item_id).get().response;
-				
 
 				]]></execute>
 			</select>
