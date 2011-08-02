@@ -7,11 +7,16 @@
 		<sampleQuery>SELECT * FROM {table} WHERE dev_key="a" AND secret="b" AND state="florida"</sampleQuery>
 	</meta>
 	<bindings>
-		<select itemPath="json" produces="JSON">
+		<select itemPath="json.stories" produces="JSON">
 			<urls>
 				<!-- http://hyperlocal-api.outside.in/v1.1/states/{state abbreviation}/stories?dev_key={key}&sig={signature} -->
 				<url>http://hyperlocal-api.outside.in/v1.1/states/{state}/stories</url>
 			</urls>
+			<paging model="page">
+        <start id="page" default="0" />
+        <pagesize id="limit" max="100" />
+        <total default="10" />
+      </paging>
 			<inputs>
 				<key id="dev_key" type="xs:string" paramType="variable" required="true" />
 				<key id="secret" type="xs:string" paramType="variable" required="true" />
@@ -25,15 +30,7 @@
 				y.include("http://www.webtoolkit.info/djs/webtoolkit.md5.js");
 		
 				// create signature
-				var hm = dev_key + secret + (Math.round(new Date().getTime() / 1000).toString());
-				y.log(hm);
-
-				//var sig = y.crypto.encodeMd5(hm);
-				//y.log(sig);
-				
-				//var sig2 = Crypto.be32sToHex( Crypto.strToBe32s(hm) );
-				//y.log(sig2);
-				
+				var hm = dev_key + secret + (Math.round(new Date().getTime() / 1000).toString());		
 				var sig = MD5(hm);
 				
 				// make request
