@@ -13,7 +13,7 @@
 				<url>http://hyperlocal-api.outside.in/v1.1/states/{state}/stories</url>
 			</urls>
 			<paging model="page">
-        <start id="page" default="0" />
+        <start id="page" default="1" />
         <pagesize id="limit" max="100" />
         <total default="10" />
       </paging>
