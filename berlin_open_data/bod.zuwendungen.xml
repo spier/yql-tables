@@ -2,7 +2,7 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
-		<description></description>
+		<description>http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/index.php</description>
 	  <documentationURL>http://support.berlin.de/wiki/index.php/SimpleSearch_API</documentationURL>
 		<sampleQuery>SELECT * FROM {table} WHERE query="berlin"</sampleQuery>		
 	</meta>

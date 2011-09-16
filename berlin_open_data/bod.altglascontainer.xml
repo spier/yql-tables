@@ -9,14 +9,6 @@
 	<bindings>
 
 		<select itemPath="json.index" produces="JSON">
-			
-			<!-- /ba-charlottenburg-wilmersdorf/org/umwelt/umwelt/altglascontainer/index.php/index/index.rss?
-			q&amp;
-			plz[]=10585
-			&amp;q_geo
-			&amp;q_radius=20000 
-			-->
-			
 			<urls>
       	<url env="all">http://www.berlin.de/ba-charlottenburg-wilmersdorf/org/umwelt/umwelt/altglascontainer/index.php/index/index.json</url>
       </urls>
