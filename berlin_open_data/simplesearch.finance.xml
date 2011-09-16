@@ -4,7 +4,7 @@
 		<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
 		<description></description>
 	  <documentationURL>http://support.berlin.de/wiki/index.php/SimpleSearch_API</documentationURL>
-		<sampleQuery>SELECT * FROM {table} '</sampleQuery>		
+		<sampleQuery>SELECT * FROM {table} WHERE query="berlin"</sampleQuery>		
 	</meta>
 	<bindings>
 
@@ -28,8 +28,8 @@
       </urls>
 			<paging model="page">
 				<start id="page" default="1" />
-				<pagesize id="per_page" max="100" /> <!-- actually I am not sure if this works -->
-				<total default="10" />
+				<pagesize id="per_page" max="20" /> <!-- actually I am not sure if this works -->
+				<total default="20" />
 			</paging>
 	    <inputs>
 				<key id="q" as="query" type="xs:string" paramType="query" required="true"/>
