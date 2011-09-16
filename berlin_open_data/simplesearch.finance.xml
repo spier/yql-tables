@@ -20,15 +20,17 @@
 				&anschrift=
 				&geber=
 				&zweck=#results 
+				http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/index.php?q=krank&politikbereich=Gesundheit&jahr=--+Alles+--&q_geo=&name=&art=--+Alles+--&anschrift=&geber=--+Alles+--&zweck=&page=2&order=#results
+				
 			-->
 			<urls>
       	<url env="all">http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/index.php/index/index.json</url>
       </urls>
-			<!-- <paging model="page">
+			<paging model="page">
 				<start id="page" default="1" />
-				<pagesize id="per_page" max="100" />
+				<pagesize id="per_page" max="100" /> <!-- actually I am not sure if this works -->
 				<total default="10" />
-			</paging> -->
+			</paging>
 	    <inputs>
 				<key id="q" as="query" type="xs:string" paramType="query" required="true"/>
 
