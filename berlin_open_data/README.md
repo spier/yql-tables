@@ -2,24 +2,26 @@
 
 Experiment to map the APIs from [Berlin Open Data][] to YQL tables to create a more uniform access.
 
+If you consider this an interesting idea and want to chat about it, contact me on [Twitter](http://twitter.com/#!/sebastianspier/).
+
 # Some of the Available APIs
-- [http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/index.php]
-- [http://www.berlin.de/ba-charlottenburg-wilmersdorf/org/umwelt/umwelt/altglascontainer/]
+- http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/
+- http://www.berlin.de/ba-charlottenburg-wilmersdorf/org/umwelt/umwelt/altglascontainer/
 - ...
 
 [Documentation of SimpleSearch](http://support.berlin.de/wiki/index.php/SimpleSearch)
 
 # Examples
 
-	SELECT * FROM bod.zuwendungen WHERE query="berlin"
+	SELECT * FROM bod.zuwendungen WHERE query="berlin" - [Try it!](http://yhoo.it/p076Uw)
 	
-	SELECT * FROM bod.altglascontainer WHERE plz="10585"
+	SELECT * FROM bod.altglascontainer WHERE plz="10585" - [Try it!](http://yhoo.it/phPho6)
 
-# TODO
+# Open Items
 
 - should the query parameters be translated to English? the input and return values will be German anyways
-- some more examples of how to use this
+- test with some more APIs
+- add more examples of how to use this
 - handle caching on YQL side
-
 
 [Berlin Open Data]: http://daten.berlin.de
