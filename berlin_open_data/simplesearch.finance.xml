@@ -9,7 +9,18 @@
 	<bindings>
 
 		<select itemPath="json.index" produces="JSON">
-			<!-- http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/index.php?q=krank&politikbereich=Gesundheit&jahr=--+Alles+--&q_geo=&name=&art=--+Alles+--&anschrift=&geber=--+Alles+--&zweck=#results -->
+			<!-- 
+				http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/index.php?
+				q=krank
+				&politikbereich=Gesundheit
+				&jahr=
+				&q_geo=
+				&name=
+				&art=
+				&anschrift=
+				&geber=
+				&zweck=#results 
+			-->
 			<urls>
       	<url env="all">http://www.berlin.de/sen/finanzen/haushalt/zuwendungen/index.php/index/index.json</url>
       </urls>
