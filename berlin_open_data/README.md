@@ -1,6 +1,7 @@
 # Tables for Berlin Open Data
 
 Experiment to map the APIs from [Berlin Open Data][] to YQL tables to create a more uniform access.
+Most APIs are apparently created as a [SimpleSearch](http://support.berlin.de/wiki/index.php/SimpleSearch), which can easily be mapped to YQL tables.
 
 If you consider this an interesting idea and want to chat about it, contact me on [Twitter](http://twitter.com/#!/sebastianspier/).
 
@@ -9,13 +10,12 @@ If you consider this an interesting idea and want to chat about it, contact me o
 - http://www.berlin.de/ba-charlottenburg-wilmersdorf/org/umwelt/umwelt/altglascontainer/
 - ...
 
-[Documentation of SimpleSearch](http://support.berlin.de/wiki/index.php/SimpleSearch)
+
 
 # Examples
 
-	SELECT * FROM bod.zuwendungen WHERE query="berlin" - [Try it!](http://yhoo.it/p076Uw)
-	
-	SELECT * FROM bod.altglascontainer WHERE plz="10585" - [Try it!](http://yhoo.it/phPho6)
+- `SELECT * FROM bod.zuwendungen WHERE query="berlin"` - [Try it!](http://yhoo.it/p076Uw)
+- `SELECT * FROM bod.altglascontainer WHERE plz="10585"` - [Try it!](http://yhoo.it/phPho6)
 
 # Open Items
 
