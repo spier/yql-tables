@@ -7,7 +7,7 @@
 	    <sampleQuery>SELECT * FROM {table} WHERE apikey="YOUR_API_KEY"</sampleQuery>
     </meta>
     <bindings>
-        <select itemPath="json.response.data" produces="JSON">
+        <select itemPath="json.response" produces="JSON">
             <urls>
                 <url>http://emailapi.dynect.net/rest/json/reports/bounces/</url>
             </urls>
