@@ -9,7 +9,7 @@
     <bindings>
         <select itemPath="json.response.data" produces="JSON">
             <urls>
-                <url>http://emailapi.dynect.net/rest/json</url>
+                <url>http://emailapi.dynect.net/rest/json/reports/bounces/</url>
             </urls>
 						<paging model="offset">
 							<start id="startindex" default="0" />
