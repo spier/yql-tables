@@ -19,7 +19,7 @@
             <inputs>
                 <key id="apikey" type="xs:string" paramType="query" required="true" />
 								<key id="startdate" type="xs:string" paramType="query" />
-								<key id="entdate" type="xs:string" paramType="query" />
+								<key id="enddate" type="xs:string" paramType="query" />
             </inputs>
         </select>
      </bindings>
