@@ -4,7 +4,7 @@
 		<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
 		<description>Trains</description>
 	  <documentationURL>http://www.opendatacity.de/zugmonitor-api/</documentationURL>
-		<sampleQuery>SELECT * FROM {table}</sampleQuery>		
+		<sampleQuery>SELECT * FROM {table} WHERE date="2012-03-09"</sampleQuery>		
 	</meta>  
 	<bindings>
 		<select itemPath="json.*" produces="JSON">
