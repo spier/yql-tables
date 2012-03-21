@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+	<meta>
+		<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+		<description>Cities (with their stations)</description>
+	  <documentationURL>http://www.opendatacity.de/zugmonitor-api/</documentationURL>
+		<sampleQuery>SELECT * FROM {table}</sampleQuery>		
+	</meta>  
+	<bindings>
+		<select itemPath="json.cities.*" produces="JSON">
+			<urls>
+				<url env="all">http://zugmonitor.sz.de/api/stations</url>
+			</urls>
+			<inputs/>
+		</select>
+  </bindings>
+</table>
