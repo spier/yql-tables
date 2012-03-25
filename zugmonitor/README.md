@@ -28,7 +28,7 @@ You can try out the working samples below by opening the [YQL console][] and pas
 
 Warning: This data cannot be retrieved with YQL!
 
-	SELECT * FROM zugmonitor.trains WHERE date="2012-03-09"
+	SELECT * FROM zugmonitor.trains WHERE day="2012-03-09"
 
 
 [YQL console]: http://developer.yahoo.com/yql/console/?env=https://raw.github.com/spier/yql-tables/zugmonitor/alltables_forked.env
