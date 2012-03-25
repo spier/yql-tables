@@ -4,15 +4,15 @@
 		<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
 		<description>Trains</description>
 	  <documentationURL>http://www.opendatacity.de/zugmonitor-api/</documentationURL>
-		<sampleQuery>SELECT * FROM {table} WHERE date="2012-03-09"</sampleQuery>		
+		<sampleQuery>SELECT * FROM {table} WHERE day="2012-03-09"</sampleQuery>		
 	</meta>  
 	<bindings>
 		<select itemPath="json.*" produces="JSON">
 			<urls>
-				<url env="all">http://zugmonitor.sz.de/api/trains/{date}</url>
+				<url env="all">http://zugmonitor.sueddeutsche.de/api/trains/{day}</url>
 			</urls>
 			<inputs>
-				<key id="date" type="xs:string" paramType="path" required="false"/>
+				<key id="day" type="xs:string" paramType="path" required="true"/>
 			</inputs>
 		</select>
 	</bindings>
