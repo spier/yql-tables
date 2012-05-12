@@ -2,6 +2,8 @@
 
 [Klout API v2](http://klout.com/s/developers/v2) is currently in beta and is subject to change. Thar be dragons.
 
+Try these tables in the [YQL Console](http://developer.yahoo.com/yql/console/?env=https://raw.github.com/spier/yql-tables/klout2/alltables_forked.env).
+
 ## Examples Identity
 
 Get Klout ID for a Twitter screenname
