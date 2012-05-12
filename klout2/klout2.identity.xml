@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+    <meta>
+	    <author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+	    <description></description>
+      <documentationURL>http://klout.com/s/developers/v2</documentationURL>
+	    <sampleQuery>SELECT * FROM {table} WHERE twitter_screenname='sebastianspier' AND api_key='yourKeyGoesHere'</sampleQuery>
+			<sampleQuery>SELECT * FROM {table} WHERE twitter_id='96320763' AND api_key='yourKeyGoesHere'</sampleQuery>
+			<sampleQuery>SELECT * FROM {table} WHERE klout_id='653149' AND api_key='yourKeyGoesHere'</sampleQuery>	
+    </meta>
+    <bindings>
+        <select itemPath="json" produces="JSON">
+            <urls>
+                <url>http://api.klout.com/v2/identity.json/twitter</url>
+            </urls>
+            <inputs>
+                <key id="key" as="api_key" type="xs:string" paramType="query" required="true"/>
+								<key id="screenName" as="twitter_screenname" type="xs:string" paramType="query" required="true"/>
+            </inputs>
+        </select>
+
+        <select itemPath="json" produces="JSON">
+            <urls>
+                <url>http://api.klout.com/v2/identity.json/tw/{twitter_id}</url>
+            </urls>
+            <inputs>
+                <key id="key" as="api_key" type="xs:string" paramType="query" required="true"/>
+								<key id="twitter_id" type="xs:string" paramType="path" required="true"/>
+            </inputs>
+        </select>
+
+        <select itemPath="json" produces="JSON">
+            <urls>
+                <url>http://api.klout.com/v2/identity.json/klout/{klout_id}/tw</url>
+            </urls>
+            <inputs>
+                <key id="key" as="api_key" type="xs:string" paramType="query" required="true"/>
+								<key id="klout_id" type="xs:string" paramType="path" required="true"/>
+            </inputs>
+        </select>
+     </bindings>
+</table>

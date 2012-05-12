@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+    <meta>
+	    <author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+	    <description></description>
+      <documentationURL>http://klout.com/s/developers/v2</documentationURL>
+	    <sampleQuery>SELECT * FROM {table} WHERE klout_id='653149' AND data="score" AND api_key='yourKeyGoesHere'</sampleQuery>
+			<sampleQuery>SELECT * FROM {table} WHERE klout_id='653149' AND data="influence" AND api_key='yourKeyGoesHere'</sampleQuery>
+			<sampleQuery>SELECT * FROM {table} WHERE klout_id='653149' AND data="topics" AND api_key='yourKeyGoesHere'</sampleQuery>
+    </meta>
+    <bindings>
+        <select itemPath="json" produces="JSON">
+            <urls>
+                <url>http://api.klout.com/v2/user.json/{klout_id}/{data}</url>
+            </urls>
+            <inputs>
+                <key id="key" as="api_key" type="xs:string" paramType="query" required="true"/>
+								<key id="klout_id" type="xs:string" paramType="path" required="true"/>
+								<key id="data" type="xs:string" paramType="path" required="true"/>
+            </inputs>
+        </select>
+     </bindings>
+</table>
