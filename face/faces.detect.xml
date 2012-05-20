@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+	<meta>
+		<author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+		<description>  </description>
+		<documentationURL>http://developers.face.com/docs/api/faces-detect/</documentationURL>
+		<sampleQuery>SELECT * FROM {table} WHERE </sampleQuery>
+	</meta>
+	<bindings>		
+
+		<select itemPath="json.photos" produces="JSON">
+			<urls>
+				<url>https://api.face.com/faces/detect.json</url>
+			</urls>
+			<inputs>
+				<key id="api_key" type="xs:string" paramType="query" required="true"/>
+				<key id="api_secret" type="xs:string" paramType="query" required="true"/>
+				
+				<key id="urls" type="xs:string" paramType="query"/>
+				<key id="detector" type="xs:string" paramType="query" default="Normal"/>
+				<key id="attributes" type="xs:string" paramType="query" default="none"/>
+			</inputs>
+		</select>
+		
+	</bindings>
+</table>
