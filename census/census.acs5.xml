@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+    <meta>
+	    <author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+	    <description>census.gov - Census Bureau APIs</description>
+      <documentationURL>http://www.census.gov/developers/</documentationURL>
+	    <sampleQuery>SELECT * FROM {table} WHERE get="B02001_001E,NAME" AND for="state:06,36" AND key="YOUR_API_KEY"</sampleQuery>
+    </meta>
+    <bindings>
+        <select itemPath="json.*" produces="JSON">
+            <urls>
+                <url>http://api.census.gov/data/2010/acs5</url>
+            </urls>
+            <inputs>
+                <key id="key" type="xs:string" paramType="query" required="true"/>
+              	<key id="get" type="xs:string" paramType="query" required="true"/>
+              	<key id="for" type="xs:string" paramType="query" required="true"/>   
+            </inputs>
+        </select>
+     </bindings>
+</table>
