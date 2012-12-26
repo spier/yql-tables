@@ -9,7 +9,7 @@
   <bindings>
 
     <!-- search for series -->
-    <select itemPath="json.*" produces="JSON">
+    <select itemPath="json" produces="JSON">
       <urls>
         <url env="all">http://api.zeit.de/series</url>
       </urls>
