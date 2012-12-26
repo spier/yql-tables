@@ -22,7 +22,7 @@
         <key id="api_key" type="xs:string" paramType="query" required="true"/>
         <!-- <key id="X-Authorization" as="api_key" type="xs:string" paramType="header" required="true"/> -->
 
-        <key id="q" type="xs:string" paramType="query" required="true" description="the main search query"/>
+        <key id="q" type="xs:string" paramType="query" required="true" default="*" description="the main search query"/>
         <key id="fields" type="xs:string" paramType="query" description="partially select output fields"/>
       </inputs>
     </select>
