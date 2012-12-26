@@ -26,7 +26,7 @@
       </inputs>
     </select>
 
-    <!-- retrieve one specific article -->
+    <!-- retrieve one specific article by ID -->
     <select itemPath="json" produces="JSON">
       <urls>
         <url env="all">http://api.zeit.de/content/{id}</url>
@@ -38,6 +38,20 @@
         <key id="fields" type="xs:string" paramType="query" description="partially select output fields"/>
       </inputs>
     </select>
+
+    <!-- retrieve one specific article by absolute URI -->
+    <select itemPath="json" produces="JSON">
+      <urls>
+        <url env="all">{uri}</url>
+      </urls>
+      <inputs>
+        <key id="X-Authorization" as="api_key" type="xs:string" paramType="header" required="true"/>
+
+        <key id="uri" type="xs:string" paramType="path" required="true" description="absolute URI of the article"/>
+        <key id="fields" type="xs:string" paramType="query" description="partially select output fields"/>
+      </inputs>
+    </select>
+
 
   </bindings>
 </table>
