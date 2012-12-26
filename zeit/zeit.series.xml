@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+    <author>Sebastian Spier (http://twitter.com/#!/sebastianspier/)</author>
+    <description></description>
+    <documentationURL></documentationURL>
+    <sampleQuery>SELECT * FROM {table} WHERE q="S*"</sampleQuery>
+  </meta>
+  <bindings>
+
+    <!-- search for series -->
+    <select itemPath="json.*" produces="JSON">
+      <urls>
+        <url env="all">http://api.zeit.de/series</url>
+      </urls>
+      <paging model="offset">
+        <start id="offset" default="0"/>
+        <pagesize id="limit" max="100"/>
+        <total default="10" />
+      </paging>
+      <inputs>
+        <key id="api_key" type="xs:string" paramType="query" required="true"/>
+        <!-- <key id="X-Authorization" as="api_key" type="xs:string" paramType="header" required="true"/> -->
+
+        <key id="q" type="xs:string" paramType="query" required="true" description="the main search query"/>
+        <key id="fields" type="xs:string" paramType="query" description="partially select output fields"/>
+      </inputs>
+    </select>
+
+  </bindings>
+</table>
