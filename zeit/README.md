@@ -16,6 +16,7 @@ Some advantages of using YQL in the context of this API:
 - add sorting to /content
 - add faceting to /content
 - add field selection
+- add calls like department/<id> etc
 - explain YQL vs API field selection
 
 
@@ -33,8 +34,8 @@ This key is then passed along to the ZEIT API as the *X-Authorization* header.
 You need an API Key in order to use the ZEIT API.
 You can set the API Key for all YQL examples below like this:
 
-  SET api_key="<API KEY HERE>" ON zeit;
-  <YQL COMMAND HERE>
+    SET api_key="<API KEY HERE>" ON zeit;
+    <YQL COMMAND HERE>
 
 
 
@@ -43,68 +44,68 @@ You can set the API Key for all YQL examples below like this:
 
 ## Show client details
 
-  SELECT * FROM zeit.client 
+    SELECT * FROM zeit.client 
 
 ## Search for author
 
-  SELECT * FROM zeit.author
-  WHERE q="Hans*";
+    SELECT * FROM zeit.author
+    WHERE q="Hans*";
 
 ## Search for product
 
-  SELECT * FROM zeit.product 
-  WHERE q="*CAMPUS*";   
+    SELECT * FROM zeit.product 
+    WHERE q="*CAMPUS*";   
 
 ## Search for series
 
 *Could not get the search for series to work*
 
-  SELECT * FROM zeit.series 
-  WHERE q="*";
+    SELECT * FROM zeit.series 
+    WHERE q="*";
 
 ## Search for keyword
 
-  SELECT * FROM zeit.keyword
-  WHERE q="Union*";
+    SELECT * FROM zeit.keyword
+    WHERE q="Union*";
 
 ## Search for department
 
-  SELECT * FROM zeit.department
-  WHERE q="U*";
+    SELECT * FROM zeit.department
+    WHERE q="U*";
 
 ## Search for content
 
 See all matches, also including counts for *found*, *limit*, and *offset:
 
-  SELECT * FROM zeit.content
-  WHERE q="Umwelt";
+    SELECT * FROM zeit.content
+    WHERE q="Umwelt";
 
 See only the articles matching the search:
 
-  SELECT matches FROM zeit.content
-  WHERE q="Umwelt";
+    SELECT matches FROM zeit.content
+    WHERE q="Umwelt";
 
 See the first 30 results (instead of the first 10, which is the default):
 
-  SELECT matches FROM zeit.content(0,30)
-  WHERE q="Umwelt";
+    SELECT matches FROM zeit.content(0,30)
+    WHERE q="Umwelt";
 
 Skip the first 100 results, and show results 101 to 123:
 
-  SELECT matches FROM zeit.content(100,23)
-  WHERE q="Umwelt";
+    SELECT matches FROM zeit.content(100,23)
+    WHERE q="Umwelt";
 
 ## Retrieve all content metadata for one article
 
 Get one article by its ID:
 
-  SELECT * FROM zeit.content 
-  WHERE id="6mpIkLngjOxBoMnwoauBoh";
+    SELECT * FROM zeit.content 
+    WHERE id="6mpIkLngjOxBoMnwoauBoh";
 
 Get only the categories of one article:
 
-  SELECT categories FROM zeit.content 
-  WHERE id="6mpIkLngjOxBoMnwoauBoh";
+    SELECT categories FROM zeit.content 
+    WHERE id="6mpIkLngjOxBoMnwoauBoh";
 
 Get one article its URL:
 
@@ -119,20 +120,20 @@ These YQL examples represent extensions to the normal ZEIT API functionality.
 
 ## Get only the categories of one article that are associated with an department:
 
-  SELECT categories FROM zeit.content 
-  WHERE id="6mpIkLngjOxBoMnwoauBoh" AND categories.rel="department";
+    SELECT categories FROM zeit.content 
+    WHERE id="6mpIkLngjOxBoMnwoauBoh" AND categories.rel="department";
 
 ## Get all detailed metadata for a bunch of articles (joining multiple calls)
 
-  SELECT * FROM zeit.content WHERE id IN (
-    SELECT matches.uuid FROM zeit.content WHERE q="test"
-  )
+    SELECT * FROM zeit.content WHERE id IN (
+      SELECT matches.uuid FROM zeit.content WHERE q="test"
+    )
 
 ## Field selection
 
 Select only uuid, title, and relations
 
-  SELECT uuid, title, relations FROM zeit.content WHERE id IN (
-    SELECT matches.uuid FROM zeit.content WHERE q="test"
-  )
+    SELECT uuid, title, relations FROM zeit.content WHERE id IN (
+      SELECT matches.uuid FROM zeit.content WHERE q="test"
+    )
 
