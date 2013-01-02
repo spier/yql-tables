@@ -8,7 +8,6 @@
   </meta>
   <bindings>
 
-    <!-- search for series -->
     <select itemPath="json" produces="JSON">
       <urls>
         <url env="all">http://api.zeit.de/series</url>
@@ -19,8 +18,7 @@
         <total default="10" />
       </paging>
       <inputs>
-        <key id="api_key" type="xs:string" paramType="query" required="true"/>
-        <!-- <key id="X-Authorization" as="api_key" type="xs:string" paramType="header" required="true"/> -->
+        <key id="X-Authorization" as="api_key" type="xs:string" paramType="header" required="true"/>
 
         <key id="q" type="xs:string" paramType="query" required="true" description="the main search query"/>
         <key id="fields" type="xs:string" paramType="query" description="partially select output fields"/>
