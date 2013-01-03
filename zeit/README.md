@@ -1,30 +1,22 @@
 # YQL tables for ZEIT ONLINE Content API
 
-These are inofficial YQL tables for the [ZEIT ONLINE Content API](http://developer.zeit.de/index/).
-If you don't know what YQL is, I reccomend to start with the documentation of the [Yahoo! Query Language](http://developer.yahoo.com/yql/).
+These are inofficial YQL tables for the [ZEIT ONLINE Content API][zeit]. If you don't know YQL, I recommend to start with the documentation of the [Yahoo! Query Language][yql].
 
-Some advantages of using YQL in the context of this API:
+# Warning
 
-- mashup ZEIT API with other APIs easily
+These YQL tables are only 90% finished, so they should be considered experimental.
+
+# Benefits of using YQL
+
+- prototype mashups of the ZEIT API with other APIs easily
 - parallelize multiple calls to the ZEIT API with one YQL call (warning: be aware that this does not increase the rate limit that the ZEIT API gives you. no backdoors here!)
 - convert JSON response to XML automatically - sorry for the ones who actually need that :)
-
-# TODO
-
-- fix "get content by URI" call
-- mention that one YQL call may lead to multiple API calls (wrapper functionality)
-- add sorting to /content
-- add faceting to /content
-- add field selection
-- add calls like department/<id> etc
-- explain YQL vs API field selection
-
 
 # General
 
 ## Testing YQL calls
 
-All YQL queries below can be tested in the [YQL Console](http://developer.yahoo.com/yql/console/?env=https://raw.github.com/spier/yql-tables/zeit/alltables_forked.env), by loading the environment file alltables_forked.env from this repository.
+All YQL queries below can be tested in the [YQL Console][yql_console], by loading the environment file alltables_forked.env from this repository.
 
 ## Authentication
 
@@ -136,4 +128,23 @@ Select only uuid, title, and relations
     SELECT uuid, title, relations FROM zeit.content WHERE id IN (
       SELECT matches.uuid FROM zeit.content WHERE q="test"
     )
+
+
+
+# TODO
+
+Implementation tasks for these YQL tables.
+
+- add sorting to /content
+- add faceting to /content
+- add field selection
+- add calls like department/<id> etc
+- explain YQL vs API field selection
+- fix "get content by URI" call
+
+
+[zeit]: http://developer.zeit.de/index/
+[yql]: http://developer.yahoo.com/yql/
+[yql_console]: http://developer.yahoo.com/yql/console/?env=https://raw.github.com/spier/yql-tables/zeit/alltables_forked.env
+
 
