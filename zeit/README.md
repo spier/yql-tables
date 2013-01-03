@@ -1,10 +1,6 @@
 # YQL tables for ZEIT ONLINE Content API
 
-These are inofficial YQL tables for the [ZEIT ONLINE Content API][zeit]. If you don't know YQL, I recommend to start with the documentation of the [Yahoo! Query Language][yql].
-
-# Warning
-
-These YQL tables are only 90% finished, so they should be considered experimental.
+These are inofficial YQL tables for the [ZEIT ONLINE Content API][zeit]. If you don't know YQL, I recommend to start with the documentation of the [Yahoo! Query Language][yql]. *Warning:* These YQL tables are only 90% finished, so they should be considered experimental.
 
 # Benefits of using YQL
 
@@ -20,10 +16,11 @@ All YQL queries below can be tested in the [YQL Console][yql_console], by loadin
 
 ## Authentication
 
-Each of the YQL tables expects that you pass your API Key as parameter *api_key*.
-This key is then passed along to the ZEIT API as the *X-Authorization* header.
+You need an API Key in order to use the ZEIT API. If you don't have one, you need to (register)[http://developer.zeit.de/quickstart/].
 
-You need an API Key in order to use the ZEIT API.
+All YQL queries expects that you pass this API Key as parameter **api_key**.
+This key is then passed along to the ZEIT API as the **X-Authorization** header.
+
 You can set the API Key for all YQL examples below like this:
 
     SET api_key="<API KEY HERE>" ON zeit;
@@ -31,39 +28,16 @@ You can set the API Key for all YQL examples below like this:
 
 
 
-
 # Simple Queries
-
-## Show client details
-
-    SELECT * FROM zeit.client 
 
 ## Search for author
 
     SELECT * FROM zeit.author
     WHERE q="Hans*";
 
-## Search for product
+## Show client details
 
-    SELECT * FROM zeit.product 
-    WHERE q="*CAMPUS*";   
-
-## Search for series
-
-*Could not get the search for series to work*
-
-    SELECT * FROM zeit.series 
-    WHERE q="*";
-
-## Search for keyword
-
-    SELECT * FROM zeit.keyword
-    WHERE q="Union*";
-
-## Search for department
-
-    SELECT * FROM zeit.department
-    WHERE q="U*";
+    SELECT * FROM zeit.client     
 
 ## Search for content
 
@@ -102,6 +76,28 @@ Get only the categories of one article:
 Get one article its URL:
 
   TBD
+
+## Search for department
+
+    SELECT * FROM zeit.department
+    WHERE q="U*";  
+
+## Search for keyword
+
+    SELECT * FROM zeit.keyword
+    WHERE q="Union*";
+
+## Search for product
+
+    SELECT * FROM zeit.product 
+    WHERE q="*CAMPUS*";   
+
+## Search for series
+
+*Could not get the search for series to work*
+
+    SELECT * FROM zeit.series 
+    WHERE q="*";
 
 
 
