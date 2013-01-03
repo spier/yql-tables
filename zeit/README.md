@@ -98,10 +98,9 @@ Get one article its URL:
 
 
 
-## Advances Examples
+## Advances Queries
 
-These YQL examples represent extensions to the normal ZEIT API functionality.
-
+These queries showcase some possibilities that YQL offers, which are extensions to the normal ZEIT API functionality.
 
 ### Get only the categories of one article that are associated with an department:
 
@@ -114,13 +113,6 @@ These YQL examples represent extensions to the normal ZEIT API functionality.
       SELECT matches.uuid FROM zeit.content WHERE q="test"
     )
 
-### Field selection
-
-Select only uuid, title, and relations
-
-    SELECT uuid, title, relations FROM zeit.content WHERE id IN (
-      SELECT matches.uuid FROM zeit.content WHERE q="test"
-    )
 
 
 
