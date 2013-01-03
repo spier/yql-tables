@@ -1,20 +1,20 @@
 # YQL tables for ZEIT ONLINE Content API
 
-These are inofficial YQL tables for the [ZEIT ONLINE Content API][zeit]. If you don't know YQL, I recommend to start with the documentation of the [Yahoo! Query Language][yql]. *Warning:* These YQL tables are only 90% finished, so they should be considered experimental.
+These are inofficial YQL tables for the [ZEIT ONLINE Content API][zeit]. If you don't know YQL, I recommend to start with the documentation of the [Yahoo! Query Language][yql]. **Warning:** These YQL tables are only 90% finished, so they should be considered experimental.
 
-# Benefits of using YQL
+## Benefits of using YQL
 
 - prototype mashups of the ZEIT API with other APIs easily
 - parallelize multiple calls to the ZEIT API with one YQL call (warning: be aware that this does not increase the rate limit that the ZEIT API gives you. no backdoors here!)
 - convert JSON response to XML automatically - sorry for the ones who actually need that :)
 
-# General
+## General
 
-## Testing YQL calls
+### Testing YQL calls
 
 All YQL queries below can be tested in the [YQL Console][yql_console], by loading the environment file alltables_forked.env from this repository.
 
-## Authentication
+### Authentication
 
 You need an API Key in order to use the ZEIT API. If you don't have one, you need to (register)[http://developer.zeit.de/quickstart/].
 
@@ -28,18 +28,18 @@ You can set the API Key for all YQL examples below like this:
 
 
 
-# Simple Queries
+## Simple Queries
 
-## Search for author
+### Search for author
 
     SELECT * FROM zeit.author
     WHERE q="Hans*";
 
-## Show client details
+### Show client details
 
     SELECT * FROM zeit.client     
 
-## Search for content
+### Search for content
 
 See all matches, also including counts for *found*, *limit*, and *offset:
 
@@ -61,7 +61,7 @@ Skip the first 100 results, and show results 101 to 123:
     SELECT matches FROM zeit.content(100,23)
     WHERE q="Umwelt";
 
-## Retrieve all content metadata for one article
+### Retrieve all content metadata for one article
 
 Get one article by its ID:
 
@@ -77,22 +77,22 @@ Get one article its URL:
 
   TBD
 
-## Search for department
+### Search for department
 
     SELECT * FROM zeit.department
     WHERE q="U*";  
 
-## Search for keyword
+### Search for keyword
 
     SELECT * FROM zeit.keyword
     WHERE q="Union*";
 
-## Search for product
+### Search for product
 
     SELECT * FROM zeit.product 
     WHERE q="*CAMPUS*";   
 
-## Search for series
+### Search for series
 
 *Could not get the search for series to work*
 
@@ -101,23 +101,23 @@ Get one article its URL:
 
 
 
-# Advances Examples
+## Advances Examples
 
 These YQL examples represent extensions to the normal ZEIT API functionality.
 
 
-## Get only the categories of one article that are associated with an department:
+### Get only the categories of one article that are associated with an department:
 
     SELECT categories FROM zeit.content 
     WHERE id="6mpIkLngjOxBoMnwoauBoh" AND categories.rel="department";
 
-## Get all detailed metadata for a bunch of articles (joining multiple calls)
+### Get all detailed metadata for a bunch of articles (joining multiple calls)
 
     SELECT * FROM zeit.content WHERE id IN (
       SELECT matches.uuid FROM zeit.content WHERE q="test"
     )
 
-## Field selection
+### Field selection
 
 Select only uuid, title, and relations
 
@@ -127,7 +127,7 @@ Select only uuid, title, and relations
 
 
 
-# TODO
+## TODO
 
 Implementation tasks for these YQL tables.
 
@@ -142,5 +142,3 @@ Implementation tasks for these YQL tables.
 [zeit]: http://developer.zeit.de/index/
 [yql]: http://developer.yahoo.com/yql/
 [yql_console]: http://developer.yahoo.com/yql/console/?env=https://raw.github.com/spier/yql-tables/zeit/alltables_forked.env
-
-
