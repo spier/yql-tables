@@ -16,15 +16,12 @@ All YQL queries below can be tested in the [YQL Console][yql_console], by loadin
 
 ### Authentication
 
-You need an API Key in order to use the ZEIT API. If you don't have one, you need to (register)[http://developer.zeit.de/quickstart/].
-
-All YQL queries expects that you pass this API Key as parameter **api_key**.
-This key is then passed along to the ZEIT API as the **X-Authorization** header.
+You need an API Key in order to use the ZEIT API. If you don't have one, you need to [register](http://developer.zeit.de/quickstart/). All YQL queries expects that you pass this API Key as parameter **api_key**. This key is then passed along to the ZEIT API as the **X-Authorization** header.
 
 You can set the API Key for all YQL examples below like this:
 
-    SET api_key="<API KEY HERE>" ON zeit;
-    <YQL COMMAND HERE>
+    SET api_key="<YOUR API KEY HERE>" ON zeit;
+    <YQL QUERY HERE>
 
 
 
